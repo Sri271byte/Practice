@@ -42,43 +42,10 @@ class StringTooMap {
         System.out.println(map.get("sentence"));
     }
 }
- class Main {
-    public static void main(String[] args) {
-    	
-        List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5, 3, 2, 22);
-        List<Integer> list2 = Arrays.asList(2, 25, 5, 4, 3);
 
-        List<Integer> result = Stream.concat(list1.stream(), list2.stream())
-                .filter(i -> String.valueOf(i).startsWith("2"))
-                .collect(Collectors.toList());
-
-        System.out.println(result);
-    }
-}
  
  
-  class Main1 {
-	    public static void main(String[] args) {
-	        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
 
-	        // Using lambda expression
-	        names.forEach(name -> System.out.println(name));
-	    }
-	}
- 
- 
-  class Main3 {
-	    public static void main(String[] args) {
-	        List<String> fruits = Arrays.asList("apple", "banana", "apricot", "grape");
-
-	        long count = fruits.stream()
-	                .filter(fruit -> fruit.startsWith("a"))
-	                .count();
-
-	        System.out.println(count); // 2
-	    }
-	}
-  
   //=======================================================================================================================
   
   class PredicateExample {
@@ -121,15 +88,7 @@ class StringTooMap {
   }
 	    }}
   
-  class print4{
-	  public static void main(String[] args) {
-		
-		  List<Integer> Arr = Arrays.asList(1,2,3,4,5);
-		  List<Integer> s= Arr.stream().filter(e->e==4).collect(Collectors.toList());
-		  System.out.println(s);
-	}
-  }
- 
+  
   
  class waste{
 	 public static void main(String[] args) {
@@ -148,64 +107,6 @@ class StringTooMap {
  
  
  
- 
-
- class SortNumbersKeepSpecialChars {
-    public static void main(String[] args) {
-        List<String> input = Arrays.asList("4", "@", "3", "#", "2", "1");
-
-        // Step 1: Extract and sort numeric values
-        List<String> sortedNumbers = input.stream()
-            .filter(s -> s.matches("\\d+"))
-            .sorted(Comparator.comparingInt(Integer::parseInt))
-            .collect(Collectors.toList());   
-
-        // Step 2: Rebuild result keeping special characters in place
-        Iterator<String> numberIterator = sortedNumbers.iterator();
-
-        List<String> result = input.stream()
-            .map(s -> s.matches("\\d+") ? numberIterator.next() : s)
-            .collect(Collectors.toList());
-
-        System.out.println("Sorted output: " + result);
-    }
-}
- 
- class SortNumbersKeepSpecials {
-	    public static void main(String[] args) {
-	        Character[] input = {'5','3','@','&','8','1','!'};
-
-	        // Step 1: Extract only digits and sort them
-	        List<Character> sortedDigits = Arrays.stream(input)
-	                .filter(Character::isDigit)
-	                .sorted()
-	                .collect(Collectors.toList());
-
-	        // Step 2: Iterator for sorted digits
-	        Iterator<Character> digitIterator = sortedDigits.iterator();
-
-	        // Step 3: Replace digits in original positions with sorted digits
-	        Character[] output = Arrays.stream(input)
-	                .map(ch -> Character.isDigit(ch) ? digitIterator.next() : ch)
-	                .toArray(Character[]::new);
-
-	        // Print result
-	        System.out.println(Arrays.toString(output));
-	    }
-	}
- 
- 
- class CountAExample2 {
-	    public static void main(String[] args) {
-	        String[] input = {"ram", "ramalayam", "srikanth"};
-
-	        long count = Arrays.stream(input).mapToLong(s -> s.chars()
-	                .filter(ch -> ch == 'a' || ch == 'A')
-	                 .count()).sum();
-
-	        System.out.println("Count of 'a': " + count);
-	    }
-	}
  
  
  class StringPatternStream {
@@ -251,18 +152,7 @@ class StringTooMap {
 	}
  
  
- class GroupByLength {
-	    public static void main(String[] args) {
-	        List<String> input = Arrays.asList("a", "bb", "ccc", "dd");
 
-	        Map<Integer, List<String>> grouped = input.stream()
-	                .collect(Collectors.groupingBy(String::length));
-	        System.out.println(grouped);
-
-	        grouped.forEach((len, group) -> System.out.println(len + " = " + group));
-	    }
-	}
- 
  
  class StringPattern {
 	    public static void main(String[] args) {
@@ -292,22 +182,7 @@ class StringTooMap {
  
  
  
- class TestOne{
-	 public static void main(String[] args) {
-		
-		  
-	
-			        List<Object> emp = Arrays.asList(1, "10", 200, "22", 10000, "111", 2000, null);
 
-			        List<String> startWith = emp.stream()
-			            .map(obj -> String.valueOf(obj))                   // Convert all objects (including null) to String
-			            .filter(e -> e.startsWith("1"))                    // Keep only those starting with "1"
-			            .collect(Collectors.toList());                     // Collect into a List
-
-			        System.out.println(startWith);
-			    }
-	}
- 
  
  
  

@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Practice {
+public class PracticeJava8String {
 
 	public static void main(String[] args) {
 		
@@ -59,24 +59,4 @@ public class Practice {
 
 
 
- class Permutations {
-    public static void main(String[] args) {
-        String str = "ABC";
-        List<String> result = new ArrayList();
-        permute("", str, result);
-
-        // Print results
-        result.forEach(System.out::println);
-    }
-
-    private static void permute(String prefix, String remaining, List<String> result) {
-        if (remaining.isEmpty()) {
-            result.add(prefix);
-        } else {
-            for (int i = 0; i < remaining.length(); i++) {
-                permute(prefix + remaining.charAt(i),
-                        remaining.substring(0, i) + remaining.substring(i + 1),
-                        result);
-            }
-        }
-}}
+ 
